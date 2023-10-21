@@ -41,4 +41,4 @@ lerna-debug.log*
 data
 
 # Chaves
-.pem
+*.pem
