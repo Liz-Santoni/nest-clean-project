@@ -1,5 +1,5 @@
 import { Either, left, right } from '@/core/either'
-import { Injectable } from '@nestjs/common/decorators'
+import { Injectable } from '@nestjs/common'
 import { Student } from '../../enterprise/entities/student'
 import { StudentsRepository } from '../repositories/students-repository'
 import { HashGenerator } from '../cryptography/hash-generator'
@@ -22,7 +22,7 @@ type RegisterStudentUseCaseResponse = Either<
 export class RegisterStudentUseCase {
   constructor(
     private studentsRepository: StudentsRepository,
-    private hshGenerator: HashGenerator,
+    private hashGenerator: HashGenerator,
   ) {}
 
   async execute({
@@ -37,7 +37,7 @@ export class RegisterStudentUseCase {
       return left(new StudentAlreadyExistsError(email))
     }
 
-    const hashedPassword = await this.hshGenerator.hash(password)
+    const hashedPassword = await this.hashGenerator.hash(password)
 
     const student = Student.create({
       name,
