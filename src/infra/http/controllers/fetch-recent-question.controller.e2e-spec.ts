@@ -42,21 +42,18 @@ describe('Fetch recent questions (E2E)', () => {
           content: 'Question content',
           slug: 'question-01',
           authorId: user.id,
-          userId: user.id,
         },
         {
           title: 'Question 02',
           content: 'Question content',
           slug: 'question-02',
           authorId: user.id,
-          userId: user.id,
         },
         {
           title: 'Question 03',
           content: 'Question content',
           slug: 'question-03',
           authorId: user.id,
-          userId: user.id,
         },
       ],
     })
