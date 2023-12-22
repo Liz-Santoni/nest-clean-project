@@ -41,13 +41,6 @@ export class PrismaAnswersRepository implements AnswersRepository {
     return answers.map(PrismaAnswerMapper.toDomain)
   }
 
-  findManyByAnswerId(
-    answerId: string,
-    params: PaginationParams,
-  ): Promise<Answer[]> {
-    throw new Error('Method not implemented.')
-  }
-
   async create(answer: Answer): Promise<void> {
     const data = PrismaAnswerMapper.toPrisma(answer)
 

@@ -6,7 +6,7 @@ import { AnswerCreatedEvent } from '@/domain/forum/enterprise/events/answer-crea
 
 export interface AnswerProps {
   authorId: UniqueEntityID
-  questionId: UniqueEntityID
+  answerId: UniqueEntityID
   content: string
   attachments: AnswerAttachmentList
   createdAt: Date
@@ -18,8 +18,8 @@ export class Answer extends AggregateRoot<AnswerProps> {
     return this.props.authorId
   }
 
-  get questionId() {
-    return this.props.questionId
+  get answerId() {
+    return this.props.answerId
   }
 
   get content() {
